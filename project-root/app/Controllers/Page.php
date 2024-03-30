@@ -8,21 +8,30 @@ class Page extends BaseController
     {
         $data = [
             'title' => 'Home | Unipdu Press',
-            'tes' => ['satu', 'dua', 'tiga']
+            //'tes' => ['satu', 'dua', 'tiga']
         ];
-        echo view('layout/header', $data);
-        echo view('page/home', $data);
-        echo view('layout/footer');
+        return view ('page/home', $data);
     }
 
     public function about()
     {
         $data = [
-            'title' => 'Home | Unipdu Press',
-            'tes' => ['satu', 'dua', 'tiga']
+            'title' => 'About | Unipdu Press',
         ];
-        echo view('layout/header', $data);
-        echo view('page/about');
-        echo view('layout/footer');
+        return view ('page/about', $data);
     }
+
+    public function contact()
+    {
+        $data = [
+            'title' => 'Contact',
+            'alamat' => [
+                ['tipe' => 'Rumah','alamat' => 'Desa Kendalsari,Sugihwaras','kota' => 'Jombang',],
+                ['tipe' => 'Kantor','alamat' => 'Kompleks Ponpes Darul Ulum Peterongan','kota' => 'Jombang',]
+            ]
+        ];
+        return view ('page/contact', $data);
+    }
+
+
 }
